@@ -5,6 +5,7 @@ import javax.xml.transform.Source;
 public class Sudoku {
     private int sudoku[][];
     // Constructor
+    
     public Sudoku() {
         sudoku = new int[][] {
             {0, 0, 0, 0, 0, 0, 0, 0, 0},

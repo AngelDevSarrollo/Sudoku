@@ -11,6 +11,7 @@ public class FromSudoku extends javax.swing.JFrame {
     
     private TableroSudoku tableroSudoku;
     private TableroNumeros tableroNumeros;
+    private FromNiveles fromNiveles;
 
     public FromSudoku() {
         initComponents();
@@ -92,6 +93,7 @@ public class FromSudoku extends javax.swing.JFrame {
         jLabel1.setBounds(420, 20, 150, 40);
 
         jLabel6.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 14)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("        RESOLVER");
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
@@ -116,6 +118,11 @@ public class FromSudoku extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 14)); // NOI18N
         jLabel2.setText("   NUEVA PARTIDA");
         jLabel2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel2MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -136,7 +143,8 @@ public class FromSudoku extends javax.swing.JFrame {
         jPanel2.setBounds(420, 60, 150, 40);
 
         jLabel3.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 14)); // NOI18N
-        jLabel3.setText("          LIMPIAR");
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("LIMPIAR");
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -158,7 +166,8 @@ public class FromSudoku extends javax.swing.JFrame {
         jPanel3.setBounds(420, 110, 150, 40);
 
         jLabel4.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 14)); // NOI18N
-        jLabel4.setText("           CREAR");
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("CREAR");
         jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -180,7 +189,8 @@ public class FromSudoku extends javax.swing.JFrame {
         jPanel4.setBounds(420, 160, 150, 40);
 
         jLabel5.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 14)); // NOI18N
-        jLabel5.setText("      COMPROBAR");
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("COMPROBAR");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -216,6 +226,15 @@ public class FromSudoku extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jLabel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MousePressed
+        if(fromNiveles != null){
+            fromNiveles.setVisible(true);            
+        }else{
+            fromNiveles = new FromNiveles();
+            fromNiveles.setVisible(true);
+        }
+    }//GEN-LAST:event_jLabel2MousePressed
 
     public static void main(String args[]) {
 

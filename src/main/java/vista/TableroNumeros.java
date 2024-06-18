@@ -23,6 +23,8 @@ public class TableroNumeros extends JPanel{
     
     public TableroNumeros(){
         iniciarComponentes();
+        tableroSudoku = FromSudoku.tableroSudoku;
+        
         
     }
     public void iniciarComponentes(){
@@ -56,6 +58,7 @@ public class TableroNumeros extends JPanel{
            txt.setEditable(false);
            txt.setBorder(BorderFactory.createLineBorder(panelBackground,1));
            txt.setFont(new Font("MontSerrat",Font.BOLD,txtTamañoLetra));
+           txt.setHorizontalAlignment(JTextField.CENTER);
            txt.setText(String.valueOf(i+1));
            
            y+=txtAltura;
@@ -74,7 +77,10 @@ public class TableroNumeros extends JPanel{
 
            @Override
            public void mousePressed(MouseEvent e) {
-
+               if(tableroSudoku.txtGenerado(tableroSudoku.txtSelected) ){
+                   return;
+               }
+               tableroSudoku.txtSelected.setText(txt.getText());
               
                
            }

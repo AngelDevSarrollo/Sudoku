@@ -31,6 +31,7 @@ public class Sudoku {
         }
         return true;
     }
+    
 
     public boolean comprobarSudoku() {
         for (int i = 0; i < sudoku.length; i++) {

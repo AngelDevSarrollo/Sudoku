@@ -23,6 +23,8 @@ public class TableroNumeros extends JPanel{
     
     public TableroNumeros(){
         iniciarComponentes();
+        tableroSudoku = FromSudoku.tableroSudoku;
+        
         
     }
     public void iniciarComponentes(){
@@ -74,7 +76,10 @@ public class TableroNumeros extends JPanel{
 
            @Override
            public void mousePressed(MouseEvent e) {
-
+               if(tableroSudoku.txtGenerado(tableroSudoku.txtSelected) ){
+                   return;
+               }
+               tableroSudoku.txtSelected.setText(txt.getText());
               
                
            }

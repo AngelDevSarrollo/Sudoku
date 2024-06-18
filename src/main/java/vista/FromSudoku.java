@@ -9,7 +9,7 @@ import java.awt.Color;
 
 public class FromSudoku extends javax.swing.JFrame {
     
-    private TableroSudoku tableroSudoku;
+    public static TableroSudoku tableroSudoku;
     private TableroNumeros tableroNumeros;
     private FromNiveles fromNiveles;
 
@@ -28,11 +28,14 @@ public class FromSudoku extends javax.swing.JFrame {
         tableroSudoku.setPanelBackground(new Color(0, 0, 0));
         //(185, 132, 140)
         tableroSudoku.setTxtBackground1(Color.white);
-        tableroSudoku.setTxtForeground1(Color.BLACK);
-        tableroSudoku.setTxtBackground2(new Color(47, 112, 175));
-        tableroSudoku.setTxtForeground2(Color.BLACK);
-        tableroSudoku.setTxtBackground3(new Color(140, 198, 227));
-        tableroSudoku.setTxtForeground3(Color.WHITE);
+        tableroSudoku.setTxtForeground1(new Color(153,1,1));
+        tableroSudoku.setTxtBackground3(new Color(47, 112, 175));
+        tableroSudoku.setTxtForeground3(Color.BLACK);
+        tableroSudoku.setTxtBackground2(new Color(140, 198, 227));
+        tableroSudoku.setTxtForeground2(Color.WHITE);
+        tableroSudoku.setTxtBackground4(new Color(214, 223, 223));
+        tableroSudoku.setTxtForeground4(Color.BLACK);
+        
         panelFondo.add(tableroSudoku);
         tableroSudoku.setLocation(70, 60);
         tableroSudoku.setVisible(true);
@@ -54,7 +57,7 @@ public class FromSudoku extends javax.swing.JFrame {
         tableroNumeros.setLocation(20, 60);
         tableroNumeros.setVisible(true);
 
-        
+        tableroSudoku.generarSudoku(2);
         
         
         
@@ -94,7 +97,7 @@ public class FromSudoku extends javax.swing.JFrame {
 
         jLabel6.setFont(new java.awt.Font("Montserrat ExtraBold", 0, 14)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("        RESOLVER");
+        jLabel6.setText("RESOLVER");
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -231,19 +234,11 @@ public class FromSudoku extends javax.swing.JFrame {
         if(fromNiveles != null){
             fromNiveles.setVisible(true);            
         }else{
-            fromNiveles = new FromNiveles();
+            fromNiveles = new FromNiveles(tableroSudoku);
             fromNiveles.setVisible(true);
         }
     }//GEN-LAST:event_jLabel2MousePressed
 
-    public static void main(String args[]) {
-
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FromSudoku().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

@@ -58,6 +58,7 @@ public class TableroNumeros extends JPanel{
            txt.setEditable(false);
            txt.setBorder(BorderFactory.createLineBorder(panelBackground,1));
            txt.setFont(new Font("MontSerrat",Font.BOLD,txtTamañoLetra));
+           txt.setHorizontalAlignment(JTextField.CENTER);
            txt.setText(String.valueOf(i+1));
            
            y+=txtAltura;

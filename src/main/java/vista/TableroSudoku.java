@@ -79,6 +79,7 @@ public class TableroSudoku extends JPanel {
                 txt.setBackground(txtBackground1);
                 txt.setForeground(txtForeground1);
                 txt.setFont(new Font("Montserrat", Font.BOLD, txtTamañoLetra));
+                txt.setHorizontalAlignment(JTextField.CENTER);
                 txt.setEditable(false);
                 txt.setCursor(new Cursor(Cursor.HAND_CURSOR));
                 txt.setBorder(BorderFactory.createLineBorder(panelBackground, 1));
